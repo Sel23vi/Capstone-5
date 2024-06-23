@@ -402,3 +402,4 @@ pandas
 streamlit
 emoji
 numpy
+pickle
