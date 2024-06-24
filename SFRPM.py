@@ -71,16 +71,23 @@ town = st.selectbox("Choose a town from the list:", ['---','ANG MO KIO', 'BEDOK'
 clicked1 = st.button("Predict Resale Price")
 
 # Load the model and encoders
-model_path = 'C:/Users/my pc/Cap 5/'
-with open(model_path + 'best_model.pkl', 'rb') as file_a:
+# Define the relative path to the model
+model_path = os.path.join('Capstone 5', 'best_model.pkl')
+town_encoder_path = os.path.join('Capstone 5', 'town_encoder3.pkl')
+flat_type_encoder_path = os.path.join('Capstone 5', 'flat_type_encoder3.pkl')
+storey_range_encoder_path = os.path.join('Capstone 5', 'storey_range_encoder3.pkl')
+flat_model_encoder_path = os.path.join('Capstone 5', 'flat_model_encoder3.pkl')
+
+# Load the model and encoders using the relative path
+with open(model_path, 'rb') as file_a:
     dtr = pickle.load(file_a)
-with open(model_path + 'town_encoder3.pkl', 'rb') as file_b:
+with open(town_encoder_path, 'rb') as file_b:
     town_encoder = pickle.load(file_b)
-with open(model_path + 'flat_type_encoder3.pkl', 'rb') as file_c:
+with open(flat_type_encoder_path, 'rb') as file_c:
     flat_type_encoder = pickle.load(file_c)
-with open(model_path + 'storey_range_encoder3.pkl', 'rb') as file_d:
+with open(storey_range_encoder_path, 'rb') as file_d:
     storey_range_encoder = pickle.load(file_d)
-with open(model_path + 'flat_model_encoder3.pkl', 'rb') as file_e:
+with open(flat_model_encoder_path, 'rb') as file_e:
     flat_model_encoder = pickle.load(file_e)
 
 current_year = pd.Timestamp.now().year
