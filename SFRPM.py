@@ -3,6 +3,7 @@ import emoji
 import pickle
 import pandas as pd
 import numpy as np
+import os
 
 st.markdown("""
     <style>
@@ -49,12 +50,6 @@ with top_bar:
     st.markdown(':rainbow[**_- Resale Price Prediction_**]', unsafe_allow_html=True)
 
 st.write("\n")
-
-
-import streamlit as st
-import pandas as pd
-import numpy as np
-import pickle
 
 st.markdown('## Type your inputs below for prediction')
 
